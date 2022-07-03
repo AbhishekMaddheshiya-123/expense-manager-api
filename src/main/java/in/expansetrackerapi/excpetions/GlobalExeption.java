@@ -29,8 +29,7 @@ public class GlobalExeption  extends ResponseEntityExceptionHandler
 	    errorObject.setStatusCode(HttpStatus.NOT_FOUND.value());
 	    errorObject.setMessage(ex.getMessage());
 	    errorObject.setTimestamp(new Date());
-		return new  ResponseEntity<ErrorObject>(errorObject,HttpStatus.NOT_FOUND);
-    	 
+		return new  ResponseEntity<ErrorObject>(errorObject,HttpStatus.NOT_FOUND); 
      }
 	
 //	Creating and Handling Custom Exception for existing email

@@ -32,13 +32,20 @@ public class ServiceExpensesImpl implements ServiceExpense
 	@Override
 	public Expenses getExpensesById(Long id) 
 	{
-//		Optional<Expenses> findById = expensesRepo.findById(id);
-		Optional<Expenses> findById = expensesRepo.findByUserIdAndId(userService.getLoggedInUser().getId(), id);
-		if(findById.isPresent())
-		{
-			return findById.get();
-		}
+	
+//			Optional<Expenses> findById = expensesRepo.findById(id);
+			Optional<Expenses> findById = expensesRepo.findByUserIdAndId(userService.getLoggedInUser().getId(), id);
+			if(findById.isPresent())
+			{
+				return findById.get();
+			}
+		
 		throw new ResourseNotFoundException("the expenses id is not found" + id) ;
+		
+	
+
+		
+		
 	}
 
 	@Override
